@@ -1,7 +1,7 @@
 import pyautogui
 import time
 
-num = int(input("How many open tabs? "))
+num = int(input("Number of open tabs: "))
 
 
 def gui_bot(num):
@@ -9,12 +9,11 @@ def gui_bot(num):
     pyautogui.click()
     for i in range(num):
         pyautogui.hotkey('command', 's')
-
-        time.sleep(2)
+        time.sleep(1.5)
 
         pyautogui.hotkey('enter')
         pyautogui.hotkey('command', 'w')
-        time.sleep(1)
+        time.sleep(0.5)
     print('Done')
 
 
