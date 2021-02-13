@@ -3,12 +3,13 @@ import pyautogui
 
 def photos_and_videos(num):
     count = 0
-    pyautogui.moveTo(1289, 768)  # position to move
+    pyautogui.moveTo(60, 60)  # position to move
     pyautogui.click()
 
     for i in range(num):
+        pyautogui.sleep(1)
         pyautogui.hotkey('command', 's')
-        pyautogui.sleep(2)
+        pyautogui.sleep(1.5)
         pyautogui.hotkey('enter')
         pyautogui.hotkey('command', 'w')
         pyautogui.sleep(0.5)
@@ -27,7 +28,7 @@ def photos(num):
         pyautogui.click()
         pyautogui.sleep(1)
         pyautogui.hotkey('command', 's')
-        pyautogui.sleep(1)
+        pyautogui.sleep(2) #1.5
         pyautogui.hotkey('enter')
         pyautogui.hotkey('command', 'w')
         pyautogui.sleep(0.1)
