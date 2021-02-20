@@ -7,7 +7,7 @@ def photos_and_videos(num):
     pyautogui.click()
 
     for i in range(num):
-        pyautogui.sleep(1)
+        pyautogui.sleep(1.5) #1
         pyautogui.hotkey('command', 's')
         pyautogui.sleep(1.5)
         pyautogui.hotkey('enter')
@@ -24,15 +24,16 @@ def photos(num):
     pyautogui.click()
 
     for i in range(num):
-        pyautogui.moveTo(1070, 1030)
+        pyautogui.moveTo(1063, 999)
         pyautogui.click()
         pyautogui.sleep(1)
         pyautogui.hotkey('command', 's')
-        pyautogui.sleep(2) #1.5
+        pyautogui.sleep(2) 
         pyautogui.hotkey('enter')
         pyautogui.hotkey('command', 'w')
         pyautogui.sleep(0.1)
         pyautogui.hotkey('command', 'w')
+        pyautogui.sleep(0.1)
         count += 1
 
     print(f'Total files downloaded: {count}')
