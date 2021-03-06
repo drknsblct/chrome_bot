@@ -9,11 +9,11 @@ def photos_and_videos(num):
 
     for i in range(num):
         pyautogui.hotkey('command', 's')
-        pyautogui.sleep(2) #1.5
+        pyautogui.sleep(2)  # 1.5
         pyautogui.press('enter')
-        pyautogui.sleep(0.5) #0.5
+        pyautogui.sleep(0.5)  # 0.5
         pyautogui.hotkey('command', 'w')
-        pyautogui.sleep(0.5) #0.5
+        pyautogui.sleep(0.5)  # 0.5
         count += 1
 
     print(f'\nTotal files downloaded: {count}')
@@ -26,19 +26,15 @@ def photos(num):
 
     for i in range(num):
         pyautogui.moveTo(1063, 999)
+        pyautogui.keyDown('option')
         pyautogui.click()
-        pyautogui.sleep(1) #wait for webpage to open
-        pyautogui.hotkey('command', 's')
-        pyautogui.sleep(1.5) #2
-        pyautogui.press('enter')
-        pyautogui.sleep(0.2) #0.1
+        pyautogui.keyUp('option')
+        pyautogui.sleep(0.2)  # 0.1
         pyautogui.hotkey('command', 'w')
-        pyautogui.sleep(0.2) #0.1
-        pyautogui.hotkey('command', 'w')
-        pyautogui.sleep(0.2) #0.1
         count += 1
 
     print(f'\nTotal files downloaded: {count}')
+
 
 if __name__ == '__main__':
     num = int(input('Number of open tabs: '))
@@ -57,5 +53,3 @@ if __name__ == '__main__':
             continue
 
     print(f'Time elapsed: {time.time() - start :.2f} sec.')
-
-
