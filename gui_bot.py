@@ -29,7 +29,7 @@ def photos(num):
         pyautogui.keyDown('option')
         pyautogui.click()
         pyautogui.keyUp('option')
-        pyautogui.sleep(0.2)  # 0.1
+        pyautogui.sleep(0.1)  # 0.1
         pyautogui.hotkey('command', 'w')
         count += 1
 
