@@ -2,8 +2,6 @@ import pyautogui
 import time
 
 
-
-
 def photos_and_videos(num):
     count = 0
     pyautogui.moveTo(60, 60)  # position to move
