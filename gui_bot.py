@@ -1,5 +1,13 @@
-import pyautogui
 import time
+import pyautogui
+
+
+# locates image on screen
+def findOnScreen():
+    if pyautogui.locateOnScreen('/Users/blackout/Scraper/Gui_Bot/image/savePhoto.png', region=(2716, 562, 148, 34), confidence=0.9):
+        pyautogui.press('enter')
+    else:
+        findOnScreen()
 
 
 def photos_and_videos(num):
@@ -9,14 +17,12 @@ def photos_and_videos(num):
 
     for i in range(num):
         pyautogui.hotkey('command', 's')
-        pyautogui.sleep(2)  # 1.5
-        pyautogui.press('enter')
-        pyautogui.sleep(0.5)  # 0.5
+        findOnScreen()
         pyautogui.hotkey('command', 'w')
         pyautogui.sleep(0.5)  # 0.5
         count += 1
 
-    print(f'\nTotal files downloaded: {count}')
+    print(f'\nTotal files downloaded: {count}')  # move outside!!!!
 
 
 def photos(num):
