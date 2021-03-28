@@ -22,7 +22,7 @@ def photos_and_videos(num):
         pyautogui.sleep(0.5)  # 0.5
         count += 1
 
-    print(f'\nTotal files downloaded: {count}')  # move outside!!!!
+    print(f'\nTotal files downloaded: {count}')
 
 
 def photos(num):
