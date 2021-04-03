@@ -28,7 +28,7 @@ def photos_and_videos(num):
     pyautogui.moveTo(60, 60)  # position to move
     pyautogui.click()
 
-    for i in range(num):
+    for _ in range(num):
         pyautogui.hotkey('command', 's')
         findOnScreen()
         pyautogui.hotkey('command', 'w')
@@ -44,7 +44,7 @@ def photos_and_videos_discord(num):
     pyautogui.moveTo(60, 60)  # position to move
     pyautogui.click()
 
-    for i in range(num):
+    for _ in range(num):
         pyautogui.hotkey('command', 's')
         findOnScreenDiscord()
         pyautogui.hotkey('command', 'w')
@@ -60,7 +60,7 @@ def photos(num):
     pyautogui.moveTo(60, 60)  # activates browser window
     pyautogui.click()
 
-    for i in range(num):
+    for _ in range(num):
         pyautogui.moveTo(1063, 999)
         pyautogui.keyDown('option')
         pyautogui.click()
