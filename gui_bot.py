@@ -6,7 +6,8 @@ import random
 
 # locates image on screen
 def findOnScreen():
-    if pyautogui.locateOnScreen('/Users/blackout/Scraper/Gui_Bot/image/savePhoto.png', region=(2716, 562, 148, 34), confidence=0.9):
+    if pyautogui.locateOnScreen('/Users/blackout/Scraper/Gui_Bot/image/savePhoto.png', region=(2716, 562, 148, 34),
+                                confidence=0.9):
         pyautogui.press('enter')
     else:
         findOnScreen()
@@ -15,7 +16,8 @@ def findOnScreen():
 # locates image on screen and inputs text on prompt
 def findOnScreenDiscord():
     random_text = ''.join(random.choices(string.ascii_lowercase + string.ascii_uppercase + string.digits, k=4))
-    if pyautogui.locateOnScreen('/Users/blackout/Scraper/Gui_Bot/image/savePhoto.png', region=(2716, 562, 148, 34), confidence=0.9):
+    if pyautogui.locateOnScreen('/Users/blackout/Scraper/Gui_Bot/image/savePhoto.png', region=(2716, 562, 148, 34),
+                                confidence=0.9):
         pyautogui.write(random_text)
         pyautogui.press('enter')
     else:
@@ -32,10 +34,8 @@ def photos_and_videos(num):
         pyautogui.hotkey('command', 's')
         findOnScreen()
         pyautogui.hotkey('command', 'w')
-        pyautogui.sleep(0.5)  # 0.5
+        pyautogui.sleep(0.5)
         count += 1
-
-    print(f'\nTotal files downloaded: {count}')
 
 
 # downloads photos and videos and changes their name
@@ -48,10 +48,8 @@ def photos_and_videos_discord(num):
         pyautogui.hotkey('command', 's')
         findOnScreenDiscord()
         pyautogui.hotkey('command', 'w')
-        pyautogui.sleep(0.5)  # 0.5
+        pyautogui.sleep(0.5)
         count += 1
-
-    print(f'\nTotal files downloaded: {count}')
 
 
 # downloads only photos
@@ -65,18 +63,26 @@ def photos(num):
         pyautogui.keyDown('option')
         pyautogui.click()
         pyautogui.keyUp('option')
-        pyautogui.sleep(0.1)  # 0.1
+        pyautogui.sleep(0.1)
         pyautogui.hotkey('command', 'w')
         count += 1
 
-    print(f'\nTotal files downloaded: {count}')
-
 
 if __name__ == '__main__':
-    num = int(input('Number of open tabs: '))
+    print()
+    while True:
+        try:
+            num = int(input('Number of tabs: '))
+            break
+        except Exception:
+            continue
 
     while True:
-        answer = int(input('Photos[1] | Photos/Videos[2] | Discord[3]: '))
+        try:
+            answer = int(input('Photos[1] | Photos/Videos[2] | Discord[3]: '))
+        except Exception:
+            continue
+
         if answer == 1:
             start = time.time()
             photos(num)
@@ -92,4 +98,4 @@ if __name__ == '__main__':
         else:
             continue
 
-    print(f'Time elapsed: {time.strftime("%M:%S", time.gmtime(time.time() - start))}')
+    print(f'\nTime elapsed: {time.strftime("%M:%S", time.gmtime(time.time() - start))}\n')
